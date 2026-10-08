@@ -19,4 +19,27 @@ Here is a list of the chapters
 - Huiling Yen – Antibodies against influenza neuraminidase
 - Steven Riley – Bridging science and decision-making
 
+## Building the manuscript
+
+The manuscript source is `main.tex` with references in `references.bib`.
+
+### PDF
+
+Requires a LaTeX distribution with `latexmk` (e.g. TeX Live).
+
+```bash
+latexmk -pdf main.tex
+```
+
+Output: `main.pdf`.
+
+### Word (.docx)
+
+Requires [pandoc](https://pandoc.org/).
+
+```bash
+pandoc main.tex --citeproc --bibliography=references.bib -s -o main.docx
+```
+
+Output: `main.docx`. The `--citeproc` flag resolves citations against `references.bib`.
 
